@@ -34,7 +34,7 @@
             <div id="navbarCollapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class=""><a href="pedido.php">Pedidos</a></li>
-                    <li class=""><a href="produtos.php">Produtos</a></li>
+                    <li class=""><a href="produtos.php?pagina=00">Produtos</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
