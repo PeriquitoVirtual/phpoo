@@ -30,10 +30,11 @@ class ServiceProduto implements IServiceProduto
         $stmt->execute();
 
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+       return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
 
     }
-
 
     public function save(){
 
