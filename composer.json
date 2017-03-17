@@ -1,0 +1,25 @@
+{
+
+  "name":"son/phpoo2",
+  "require":{
+    "php":">=5.6",
+    "pimple/pimple": "~3.0"
+  },
+
+  "authors":[
+    {
+      "name":"Cícero Machado",
+      "email":"cicero.ice@gmail.com"
+
+    }
+  ],
+
+  "autoload":{
+    "psr-4":{
+      "Source\\":"src/Source/"
+    }
+
+  }
+
+
+}
