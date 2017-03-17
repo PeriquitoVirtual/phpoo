@@ -11,7 +11,6 @@ namespace Source;
 
 interface IServiceProduto
 {
-    public function list();
     public function save();
     public function update();
     public function delete();

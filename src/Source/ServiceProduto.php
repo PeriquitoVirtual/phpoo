@@ -17,15 +17,13 @@ class ServiceProduto implements IServiceProduto
     }
 
     public function list(){
-        $itens_por_pagina = 10;
 
-        $pagina = intval($_GET['pagina']);
 
         $query1 = "SELECT item.id, item.item, item.id_subcategoria, nome from item 
         
                    
                   JOIN subcategoria 
-                  WHERE item.id_subcategoria = subcategoria.id LIMIT $pagina, $itens_por_pagina ";
+                  WHERE item.id_subcategoria = subcategoria.id LIMIT 10, 10 ";
         $stmt = $this->db->prepare($query1);
         $stmt->execute();
 
@@ -35,6 +33,7 @@ class ServiceProduto implements IServiceProduto
 
 
     }
+
 
     public function save(){
 
