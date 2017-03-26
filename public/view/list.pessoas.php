@@ -2,28 +2,31 @@
 <div class="row">
 <table class="table table-bordered table-hover">
     <tr>
-        <td><b>PEDIDO</b></b></td>
-        <td><b>ITEM</b></b></td>
-        <td><b>QUANTIDADE</b></b></td>
-        <td><b>DATA PEDIDO</b></b></td>
-        <td><b>DATA ENTREGA</b></b></td>
-        <td><b>CLIENTE</b></b></td>
+        <td><b>ID</b></b></td>
+        <td><b>PERFIL</b></b></td>
+        <td><b>NOME</b></b></td>
+        <td><b>ENDEREÇO</b></b></td>
+        <td><b>BAIRRO</b></b></td>
+        <td><b>TELEFONE</b></b></td>
+        <td><b>EMAIL</b></b></td>
+        <td><b>CIDADE</b></b></td>
     </tr>
 
     <?php
 
-        foreach ($listPedidos as $pedido):
-        $datepega = $pedido['dataPedido'];
-        $datepega = date("d-m-Y H:i:s",strtotime($datepega));
+        foreach ($listPessoas as $pessoa):
+
             ?>
 
         <tr>
-            <td><?=$pedido['idpedido']?></td>
-            <td><?=$pedido['item']?></td>
-            <td><?=$pedido['quantidade']?></td>
-            <td><?=$datepega ?></td>
-            <td><?=$pedido['dataEntrega']?></td>
-            <td><?=$pedido['nome']?></td>
+            <td><?=$pessoa['id']?></td>
+            <td><?=$pessoa['perfil']?></td>
+            <td><?=$pessoa['nome']?></td>
+            <td><?=$pessoa['endereco']?></td>
+            <td><?=$pessoa['bairro']?></td>
+            <td><?=$pessoa['telefone']?></td>
+            <td><?=$pessoa['email']?></td>
+            <td><?=$pessoa['cidade']?></td>
         </tr>
 
     <?php endforeach; ?>
@@ -35,14 +38,14 @@
 <div class="row">
 
     <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#mymodal">
-        Cadastrar Pedido
+        Novo cliente
     </button>
     <div id="mymodal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Cadastrar Pedido</h4>
+                    <h4 class="modal-title">Cadastrar Cliente</h4>
                 </div>
                 <div class="modal-body">
                     <form>

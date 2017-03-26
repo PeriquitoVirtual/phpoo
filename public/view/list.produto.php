@@ -1,22 +1,3 @@
-<?php
-
-$itens_por_pagina = 10;
-
-$pagina = intval($_GET['pagina']);
-$mysqli = mysqli_connect("localhost", "root", "root", "fruta");
-
-$result = $mysqli->query("SELECT item.id, item.item, item.id_subcategoria, nome from item 
-                  JOIN subcategoria 
-                  WHERE item.id_subcategoria = subcategoria.id");
-
-
-
-$num_paginas = ceil($num_total/$itens_por_pagina);
-
-?>
-
-
-
                     <?php if ($listProdutos > 0){ ?>
                     <table class="table table-bordered table-hover">
 

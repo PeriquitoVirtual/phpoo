@@ -33,15 +33,15 @@
             </div>
             <div id="navbarCollapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class=""><a href="pedido.php">Pedidos</a></li>
+
+                    <li class=""><a href="pessoas.php">Clientes</a></li>
                     <li class=""><a href="produtos.php?pagina=00">Produtos</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pedidos <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Title 1</li>
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li class=""><a href="pedido.php">Listar Pedidos</a></li>
+                            <li><a href="#">Cadastrar Pedido</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Title 2</li>
                             <li><a href="#">Separated link</a></li>
@@ -61,5 +61,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+
 </body>
 </html>

@@ -18,7 +18,13 @@ class ServicePedido implements IServicePedido
 
     public function list(){
 
-        $query = "SELECT * from pedido";
+        $query = "SELECT * from pedido, item_pedido, pessoa, item 
+       WHERE pedido.id = item_pedido.idpedido 
+       AND pedido.idpessoa = pessoa.id
+       AND item_pedido.iditem = item.id
+                  
+              
+                  ";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
 
