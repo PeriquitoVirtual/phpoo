@@ -43,22 +43,8 @@ class ServicePessoa implements IServicePessoa
                    )
                   VALUES
                   (
-                  '".$cod."',
-                  '".$nome."',
-                  '".$tipo."',
-                  '".$negocio."',
-                  '".$bairro."',
-                  '".$idade."',
-                  '".$quartos."',
-                  '".$suites."',
-                  '".$banheiros."',
-                  '".$garagem."',
-                  '".$resumo."',
-                  '".$descricao."',
-                  '".$valor."',
-                  '".$link."',
-                  '".$status."'
-                  )");
+                  
+                  )";
 
     }
 

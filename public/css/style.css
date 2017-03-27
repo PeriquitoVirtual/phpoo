@@ -2,7 +2,8 @@ main{
     margin-top:50px;
 }
 
-.typeahead-devs, .tt-hint {
+.tt-hint,
+.city {
     border: 2px solid #CCCCCC;
     border-radius: 8px 8px 8px 8px;
     font-size: 24px;

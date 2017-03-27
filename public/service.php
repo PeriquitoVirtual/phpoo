@@ -31,3 +31,12 @@ $container['ServicePessoa'] = function ($c){
     return new \Source\ServicePessoa($c['conn'],$c['pessoa']);
 
 };
+
+
+$container['sugest'] = function (){
+    return new \Source\Sugest;
+};
+$container['ServiceSugest'] = function ($c){
+    return new \Source\ServiceSugest($c['conn'],$c['sugest']);
+
+};
