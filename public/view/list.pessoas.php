@@ -48,7 +48,7 @@
                     <h4 class="modal-title">Cadastrar Cliente</h4>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
                         <div class="form-group">
                             <label>Email address</label>
                             <input type="email" class="form-control" placeholder="Email">
@@ -65,7 +65,7 @@
                                 <input type="checkbox"> Check me out
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="submit" class="btn btn-info" value="inserir">Enviar</button>
                     </form>
                 </div>
 

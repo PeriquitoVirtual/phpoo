@@ -6,8 +6,10 @@ require_once "service.php";
 require_once "header.php";
 
 $listPessoas = $container['ServicePessoa']->list();
-?>
 
+$savePessoas = $container['ServicePessoa']->save();
+
+?>
 
 <main>
     <section>
@@ -18,6 +20,9 @@ $listPessoas = $container['ServicePessoa']->list();
                     <?php require_once "view/list.pessoas.php"; ?>
                 </div>
             </div>
+
+
+
 
 
         </div>
