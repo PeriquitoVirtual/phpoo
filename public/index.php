@@ -33,3 +33,5 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
         </div>
     </section>
 </main>
+
+<?php require_once "footer.php" ?>

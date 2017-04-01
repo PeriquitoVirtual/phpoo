@@ -28,3 +28,5 @@ $listProdutos = $container['ServiceProduto']->list();
     </section>
 
 </main>
+
+<?php require_once "footer.php" ?>

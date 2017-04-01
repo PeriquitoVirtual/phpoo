@@ -18,6 +18,8 @@ class Conn implements IConn {
     public function connect()
     {
        return new \PDO($this->dsn,$this->user,$this->pass);
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        return $pdo;
 
     }
 

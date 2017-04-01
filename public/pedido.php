@@ -24,3 +24,5 @@ $listPedidos = $container['ServicePedido']->list();
     </section>
 
 </main>
+
+<?php require_once "footer.php" ?>

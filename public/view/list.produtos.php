@@ -10,6 +10,9 @@ $result = $mysqli->query("SELECT item.id, item.item, item.id_subcategoria, nome 
                   WHERE item.id_subcategoria = subcategoria.id");
 
 
+$num_total = $mysqli->query("SELECT item.id, item.item, item.id_subcategoria, nome from item 
+                  JOIN subcategoria 
+                  WHERE item.id_subcategoria = subcategoria.id")->num_rows;
 
 $num_paginas = ceil($num_total/$itens_por_pagina);
 
