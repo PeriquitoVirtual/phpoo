@@ -1,4 +1,3 @@
-
 <div class="row">
 <table class="table table-bordered table-hover">
     <tr>
@@ -65,6 +64,7 @@
                                 <input type="checkbox"> Check me out
                             </label>
                         </div>
+                        <input type="hidden" name="acao" value="incluir">
                         <button type="submit" class="btn btn-info" value="inserir">Enviar</button>
                     </form>
                 </div>
