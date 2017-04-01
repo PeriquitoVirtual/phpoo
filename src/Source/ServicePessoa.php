@@ -32,7 +32,7 @@ class ServicePessoa implements IServicePessoa
 
     public function save(){
 
-        $query = "Insert into 'pessoa' ('perfil', 'nome','endereco','bairro','telefone','email','id_cidade')
+        $query = "INSERT into pessoa ('perfil', 'nome','endereco','bairro','telefone','email','id_cidade')
                   VALUES (:perfil,:nome,:endereco,:bairro,:telefone,:email,:id_cidade)";
         $stmt = $this->db->prepare($query);
         $stmt->bindValue(":perfil", $this->pessoa->getPerfil());
@@ -45,9 +45,13 @@ class ServicePessoa implements IServicePessoa
         $stmt->execute();
         return $this->db->lastInsertId();
 
+
     }
 
 
+    /**
+     *
+     */
     public function update(){
 
     }

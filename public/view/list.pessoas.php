@@ -1,3 +1,37 @@
+
+<?php
+
+
+$acao  = (isset($_POST['acao'])) ? $_POST['acao'] : '';
+if ($acao == 'incluir'){
+
+
+    $cliente = $container['pessoa'];
+
+
+
+   $cliente->setPerfil("2");
+   $cliente->setNome("Rose");
+   $cliente->setEndereco("Rua 32-A, Qd. 36");
+   $cliente->setBairro("Setor Aeroporto");
+   $cliente->setTelefone("30931324");
+   $cliente->setEmail("rose@gmail.com");
+   $cliente->setCidade("11");
+
+
+   $service = $container['ServicePessoa'];
+
+
+   //var_dump($cliente);
+
+
+
+
+    print_r($service->save());
+
+}
+?>
+
 <div class="row">
 <table class="table table-bordered table-hover">
     <tr>
