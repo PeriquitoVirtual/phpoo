@@ -8,7 +8,7 @@ class Pessoa implements IPessoa {
     private $perfil;
     private $nome;
     private $endereco;
-    private $bairro;
+    private $cep;
     private $telefone;
     private $email;
     private $cidade;
@@ -71,17 +71,17 @@ class Pessoa implements IPessoa {
     /**
      * @return mixed
      */
-    public function getBairro()
+    public function getCEP()
     {
-        return $this->bairro;
+        return $this->cep;
     }
 
     /**
      * @param mixed $bairro
      */
-    public function setBairro($bairro)
+    public function setCEP($cep)
     {
-        $this->bairro = $bairro;
+        $this->cep = $cep;
     }
 
     /**

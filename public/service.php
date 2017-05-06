@@ -23,10 +23,20 @@ $container['ServicePedido'] = function ($c){
 
 };
 
+$container['itemPedido'] = function (){
+    return new \Source\ItemPedido;
+};
+$container['ServiceItemPedido'] = function ($c){
+    return new \Source\ServiceItemPedido($c['conn'],$c['itemPedido']);
+
+};
+
 
 $container['pessoa'] = function (){
     return new \Source\Pessoa;
 };
+
+
 $container['ServicePessoa'] = function ($c){
     return new \Source\ServicePessoa($c['conn'],$c['pessoa']);
 

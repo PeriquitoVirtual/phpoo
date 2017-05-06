@@ -7,9 +7,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>FRUTA E RAIZ - CASA DE ALIMENTAÇÃO VEGANA</title>
 
+
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 
 </head>
@@ -36,7 +45,7 @@
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Title 1</li>
                             <li class=""><a href="pedido.php">Listar Pedidos</a></li>
-                            <li><a href="#">Cadastrar Pedido</a></li>
+                            <li><a href="pedidoMultiplo.php">Cadastrar Pedido Múltiplo</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Title 2</li>
                             <li><a href="#">Separated link</a></li>

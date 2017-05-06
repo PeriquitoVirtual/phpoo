@@ -1,10 +1,8 @@
 <?php
 
 $acao  = (isset($_POST['acao'])) ? $_POST['acao'] : '';
-
 if ($acao == 'incluir') {
-
-    $cod = $_POST['nome'];
+    $cod = $_POST['country'];
     $id = preg_replace("/[^0-9]/","", $cod);
 
     //echo $id."<br>";
@@ -12,63 +10,26 @@ if ($acao == 'incluir') {
     $data = $_POST['data'];
     $data = date("Y-m-d",strtotime(str_replace('/','-',$data)));
 
-    $dataEntrega = $_POST['dataEntrega'];
+    $dataEntrega = $_POST['data'];
     $dataEntrega = date("Y-m-d",strtotime(str_replace('/','-',$dataEntrega)));
-
-
-    $pedido = $container['pedido'];
-
-    $pedido->setDataPedido($data);
-    $pedido->setDataEntrega($dataEntrega);
-    $pedido->setIdPessoa($id);
-
-
-    $servicePedido = $container['ServicePedido'];
-
-
-    $idPedido = $servicePedido->save();
-
-
-    $listPedidos = $container['ServicePedido']->list();
-
-    //cadastra os itens pedidos
-
-    $itemPedido = $container['itemPedido'];
-
-
-    $idItem = 10;
-    $quantidade = 5;
-
-
-    $itemPedido->setIdItem($idItem);
-    $itemPedido->setQuantidade($quantidade);
-    $itemPedido->setIdPedido($idPedido);
-
-
-    $serviceItemPedido = $container['ServiceItemPedido'];
-
-    //var_dump($cliente);
-    print_r($serviceItemPedido->save());
-
-
-    //header('Location: pedidoMultiplo.php?id=$cod');
-
-
 
     //$teste = array();
     //$teste = $_POST['campo'];
 
-    //foreach($_POST['campo'] AS $produto) {
-       // echo $produto;
-      // echo "<br>";
-  //  }
+    foreach($_POST['campo'] AS $produto) {
+        echo $produto;
+        echo "<br>";
+    }
 
     //var_dump($teste);
 
-   // $service = $container['ServicePedido'];
+    $service = $container['ServicePedido'];
 
     //var_dump($cliente);
-    //print_r($service->save());
+    print_r($service->save());
+    print_r($service->lastInsertId());
+
+
     //header('Location: pessoas.php');
 
     //echo date('Y-m-d', strtotime($data))."<br>";
@@ -82,9 +43,9 @@ if ($acao == 'incluir') {
     <tr>
         <td><b>PEDIDO</b></b></td>
         <td><b>ITEM</b></b></td>
-        <td><b>QUANT</b></b></td>
-        <td><b>PEDIDO</b></b></td>
-        <td><b>ENTREGA</b></b></td>
+        <td><b>QUANTIDADE</b></b></td>
+        <td><b>DATA PEDIDO</b></b></td>
+        <td><b>DATA ENTREGA</b></b></td>
         <td><b>CLIENTE</b></b></td>
     </tr>
 
@@ -92,18 +53,15 @@ if ($acao == 'incluir') {
 
         foreach ($listPedidos as $pedido):
         $datepega = $pedido['dataPedido'];
-        $datepega = date("d-m-Y",strtotime($datepega));
-
-            $datentrega = $pedido['dataEntrega'];
-            $datentrega = date("d-m-Y",strtotime($datentrega));
+        $datepega = date("d-m-Y H:i:s",strtotime($datepega));
             ?>
 
         <tr>
-            <td><?=$pedido['id']?></td>
+            <td><?=$pedido['idpedido']?></td>
             <td><?=$pedido['item']?></td>
             <td><?=$pedido['quantidade']?></td>
             <td><?=$datepega ?></td>
-            <td><?=$datentrega ?></td>
+            <td><?=$pedido['dataEntrega']?></td>
             <td><?=$pedido['nome']?></td>
         </tr>
 
@@ -129,8 +87,8 @@ if ($acao == 'incluir') {
                     <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
                         <div class="form-group">
                             <label>Nome</label>
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Escreva o nome" />
-                            <div id="listaNomes"></div>
+                            <input type="text" name="country" id="country" class="form-control" placeholder="Escreva o nome" />
+                            <div id="countryList"></div>
 
 
 
@@ -143,14 +101,17 @@ if ($acao == 'incluir') {
                         </div>
                         <div class="form-group">
                             <label>Data entrega</label>
-                            <input type="date" class="form-control" name="dataEntrega" placeholder="Data Pedido">
+                            <<input type="date" class="form-control" name="dataEntrega" placeholder="Data Pedido">
 
                         </div>
                         <div class="form-group">
-                            <label>Item</label>
-                            <input type="text" name="item" id="item" class="form-control" placeholder="Escreva o item" />
-                            <div id="listaItens"></div>
-                         </div>
+                            <label>Produto pedido</label>
+                        <input type="button" id="add_field" value="adicionar">
+                        <br>
+                        <div id="listas">
+                            <div><input type="text" name="campo[]"></div>
+                        </div>
+                        </div>
 
                         <div class="checkbox">
                             <label>

@@ -56,7 +56,18 @@ class ServiceProduto implements IServiceProduto
 
     }
 
+    public function sugest(){
 
+        $busca = $_POST['query2'];
+
+        $query1 = "SELECT * from item WHERE item LIKE '%$busca%'";
+        $stmt = $this->db->prepare($query1);
+        $stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+
+    }
     public function save(){
 
     }

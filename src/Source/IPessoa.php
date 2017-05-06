@@ -13,8 +13,8 @@ interface IPessoa
     public function setNome($nome);
     public function getEndereco();
     public function setEndereco($endereco);
-    public function getBairro();
-    public function setBairro($bairro);
+    public function getCEP();
+    public function setCEP($cep);
     public function getTelefone();
     public function setTelefone($telefone);
     public function getEmail();
